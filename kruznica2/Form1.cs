@@ -12,7 +12,6 @@ namespace kruznica2
         public Form1()
         {
             InitializeComponent();
-           //SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.Opaque | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.UserPaint, true);
         }
         class Kruznica
         {
@@ -103,13 +102,14 @@ namespace kruznica2
         {
             Graphics g = e.Graphics;
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+           
             foreach (Kruznica kruznica in kruznice)
-            {           
-                g.DrawLine(Pens.Black, kruznica.pocetak, kruznica.kraj);
+            {              
                 kruznica.NacrtajKruznicu(g);
                 kruznica.IzrRadius(kruznica.pocetak, kruznica.kraj);
                 label1.Invalidate();
-                label1.Text = $"radius je: {(int)kruznica.radius}";              
+                label1.Text = $"površina je: {(int)((kruznica.radius) * (kruznica.radius) * Math.PI)} " +
+                    $"opseg je: {(int)(2 * kruznica.radius * Math.PI)}";
             }
            
             if (stvaranjeKruznice != null)
@@ -117,6 +117,7 @@ namespace kruznica2
 
             base.OnPaint(e);
             g.Dispose();
+            
         }
 
     }

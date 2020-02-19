@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+           
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -41,8 +42,9 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(602, 26);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Radius je: ";
+            this.label1.Text = "";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+           
             // 
             // Form1
             // 
@@ -51,12 +53,14 @@
             this.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.ClientSize = new System.Drawing.Size(602, 243);
             this.Controls.Add(this.label1);
+            //this.DoubleBuffered = true;
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "Form1";
             this.Text = "Kruznica";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.ResumeLayout(false);
+           
 
         }
 
