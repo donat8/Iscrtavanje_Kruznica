@@ -29,7 +29,7 @@ namespace kruznica2
             public void NacrtajKruznicu(Graphics g)
             {
                 g.DrawLine(Pens.Black, pocetak, kraj);
-                using (Pen pinky = new Pen(Color.DeepPink, 4F))
+                using (Pen pinky = new Pen(Color.Black, 4F))
                     g.DrawEllipse(pinky, rect);
             }
         }
@@ -81,7 +81,7 @@ namespace kruznica2
                if (stvaranjeKruznice.Kruznica.kraj.X > 0 && stvaranjeKruznice.Kruznica.kraj.Y > 0)
                     kruznice.Add(stvaranjeKruznice.Kruznica);
                 stvaranjeKruznice = null;
-               // Invalidate();        //dok se miš pusti da se nacrta
+               // Invalidate();        //dok se miš pusti da se nacrta,nije potrebno
             }
             base.OnMouseUp(e);  //
         }
